@@ -19,5 +19,8 @@ public class NormalState implements GameState {
                 scoreBoard.setState(new DeuceState());
             }
         }
+        if (!scoreBoard.isGameOver()) {
+            gameService.getScoreOutput().displayScore(scoreBoard);
+        }
     }
 }

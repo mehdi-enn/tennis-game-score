@@ -10,5 +10,6 @@ public class DeuceState implements GameState {
     public void pointWonBy(Player player, ScoreBoard scoreBoard, GameService gameService) {
         scoreBoard.setAdvantagePlayer(player);
         scoreBoard.setState(new AdvantageState());
+        gameService.getScoreOutput().displayScore(scoreBoard);
     }
 }
