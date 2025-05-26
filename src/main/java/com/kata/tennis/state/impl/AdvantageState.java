@@ -13,6 +13,7 @@ public class AdvantageState implements GameState {
         } else {
             scoreBoard.setState(new DeuceState());
             scoreBoard.setAdvantagePlayer(null);
+            gameService.getScoreOutput().displayScore(scoreBoard);
         }
     }
 }
