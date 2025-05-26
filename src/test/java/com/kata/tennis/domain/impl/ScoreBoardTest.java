@@ -1,6 +1,8 @@
 package com.kata.tennis.domain.impl;
 
 import com.kata.tennis.enums.Player;
+import com.kata.tennis.state.GameState;
+import com.kata.tennis.state.impl.DeuceState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -63,5 +65,12 @@ class ScoreBoardTest {
         assertFalse(scoreBoard.isGameOver());
         scoreBoard.setGameOver(true);
         assertTrue(scoreBoard.isGameOver());
+    }
+
+    @Test
+    void getsSetState() {
+        GameState deuceState = new DeuceState();
+        scoreBoard.setState(deuceState);
+        assertEquals(deuceState, scoreBoard.getState());
     }
 }
