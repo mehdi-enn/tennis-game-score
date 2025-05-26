@@ -2,6 +2,8 @@ package com.kata.tennis.domain.impl;
 
 import com.kata.tennis.domain.ScoreModel;
 import com.kata.tennis.enums.Player;
+import com.kata.tennis.state.GameState;
+import com.kata.tennis.state.impl.NormalState;
 import lombok.Data;
 
 import java.util.EnumMap;
@@ -9,6 +11,7 @@ import java.util.EnumMap;
 @Data
 public class ScoreBoard implements ScoreModel {
     private final EnumMap<Player, Integer> points = new EnumMap<>(Player.class);
+    private GameState state = new NormalState();
     private Player advantagePlayer;
     private boolean gameOver = false;
 
